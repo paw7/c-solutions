@@ -9,9 +9,9 @@ middle = (low + high) / 2;
 
 ### Solution
 
-The statement is illegal because pointers cannot be added together. The
-statement can be fixed by subtracting the pointers, which is legal:
+ The statement is illegal because pointers cannot be added. Here's a legal statement that has the desired effect:
+ The value of (high - low) / 2 is an integer, not a pointer, so it can legally be added to low.
 
 ```c
-middle = (high - low) / 2 + low;
+middle = low + (high - low) / 2;
 ```
